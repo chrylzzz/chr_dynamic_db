@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.chryl.module.test.mapper.ZgInfoMapper">
+
+    <resultMap id="zgInfoResult" type="ZgInfo">
+        <id property="id" column="id"/>
+        <result property="zgname" column="zgname"/>
+        <result property="zgcode" column="zgcode"/>
+        <result property="zgdate" column="zgdate"/>
+        <result property="zgutime" column="zgutime"/>
+        <result property="zgetime" column="zgetime"/>
+        <result property="zgsord" column="zgsord"/>
+    </resultMap>
+
+    <select id="selectZg" resultMap="zgInfoResult">
+      SELECT  * FROM zg_info
+    </select>
+
+</mapper>

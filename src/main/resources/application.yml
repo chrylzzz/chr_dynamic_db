@@ -1,0 +1,49 @@
+# \u5F00\u53D1\u73AF\u5883\u914D\u7F6E
+server:
+  # \u670D\u52A1\u5668\u7684HTTP\u7AEF\u53E3\uFF0C\u9ED8\u8BA4\u4E3A8080
+  port: 8081
+  servlet:
+    # \u5E94\u7528\u7684\u8BBF\u95EE\u8DEF\u5F84
+    context-path: /
+  tomcat:
+    # tomcat\u7684URI\u7F16\u7801
+    uri-encoding: UTF-8
+    # tomcat\u6700\u5927\u7EBF\u7A0B\u6570\uFF0C\u9ED8\u8BA4\u4E3A200
+    max-threads: 800
+    # Tomcat\u542F\u52A8\u521D\u59CB\u5316\u7684\u7EBF\u7A0B\u6570\uFF0C\u9ED8\u8BA4\u503C25
+    min-spare-threads: 30
+
+
+# \u65E5\u5FD7\u914D\u7F6E
+logging:
+  level:
+    com.chryl: debug
+    org.springframework: warn
+
+# Spring\u914D\u7F6E
+spring:
+  profiles:
+    active: druid
+  # \u670D\u52A1\u6A21\u5757
+  devtools:
+    restart:
+      # \u70ED\u90E8\u7F72\u5F00\u5173
+      enabled: true
+
+# MyBatis\u914D\u7F6E
+mybatis:
+    # \u641C\u7D22\u6307\u5B9A\u5305\u522B\u540D---com.chryl.module.test.dto.ZgInfo ---> ZgINfo
+    typeAliasesPackage: com.chryl.**.dto
+    # \u914D\u7F6Emapper\u7684\u626B\u63CF\uFF0C\u627E\u5230\u6240\u6709\u7684mapper.xml\u6620\u5C04\u6587\u4EF6
+    mapperLocations: classpath*:mapper/**/*Mapper.xml
+    # \u52A0\u8F7D\u5168\u5C40\u7684\u914D\u7F6E\u6587\u4EF6
+    configLocation: classpath:mybatis/mybatis-config.xml
+
+# PageHelper\u5206\u9875\u63D2\u4EF6
+pagehelper:
+  helperDialect: mysql
+  reasonable: true
+  supportMethodsArguments: true
+  params: count=countSql
+
+
