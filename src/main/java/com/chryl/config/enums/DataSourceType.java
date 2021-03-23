@@ -3,7 +3,7 @@ package com.chryl.config.enums;
 /**
  * 数据源
  * 
- * @author ruoyi
+ * @author chryl
  */
 public enum DataSourceType
 {
